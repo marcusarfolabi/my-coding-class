@@ -1,724 +1,934 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI & Coding Class for Kids | Kenya Holiday Program</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  
-  <!-- Google Fonts: Inter & Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI & Coding Class for Kids | Kenya Holiday Program</title>
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandNavy: '#0F172A',
-            brandDark: '#0B0F19',
-            brandCyan: '#06B6D4',
-            brandViolet: '#8B5CF6',
-            brandYellow: '#F59E0B',
-            brandGreen: '#10B981',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Outfit', 'sans-serif'],
-          },
-          animation: {
-            'float': 'float 4s ease-in-out infinite',
-            'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'spin-slow': 'spin 12s linear infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-12px)' },
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brandNavy: "#0F172A",
+              brandDark: "#0B0F19",
+              brandCyan: "#06B6D4",
+              brandViolet: "#8B5CF6",
+              brandYellow: "#F59E0B",
+              brandGreen: "#10B981",
             },
-            pulseGlow: {
-              '0%, 100%': { opacity: 0.6, transform: 'scale(1)' },
-              '50%': { opacity: 0.9, transform: 'scale(1.03)' },
-            }
-          }
-        }
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Outfit", "sans-serif"],
+            },
+            animation: {
+              float: "float 4s ease-in-out infinite",
+              "pulse-glow":
+                "pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-12px)" },
+              },
+              pulseGlow: {
+                "0%, 100%": { opacity: 0.6, transform: "scale(1)" },
+                "50%": { opacity: 0.9, transform: "scale(1.03)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
       }
-    }
-  </script>
-
-  <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0F172A;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #06B6D4;
-    }
-    
-    .glass-card {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .glass-card-hover:hover {
-      border-color: rgba(6, 182, 212, 0.4);
-      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
-    }
-
-    .glow-cyan {
-      box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
-    }
-    .glow-yellow {
-      box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
-    }
-
-    /* Print view styles */
-    @media print {
-      body {
-        background: #0F172A !important;
-        color: white !important;
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
       }
-      .no-print {
-        display: none !important;
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
       }
-      .print-area {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
+      ::-webkit-scrollbar-thumb:hover {
+        background: #06b6d4;
       }
-    }
-  </style>
-</head>
-<body class="bg-brandDark text-slate-100 font-sans antialiased selection:bg-brandCyan selection:text-brandDark min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-  <!-- TOP DESIGN CONTROL BAR (Interactive Studio Switcher) -->
-  <header class="no-print sticky top-0 z-40 bg-brandNavy/95 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brandCyan to-brandViolet flex items-center justify-center font-display font-bold text-white shadow-lg">
-          <i class="fa-solid fa-code text-lg"></i>
-        </div>
-        <div>
-          <h1 class="font-display font-bold text-base md:text-lg text-white leading-tight">FalconKonnects <span class="text-brandCyan text-xs uppercase px-2 py-0.5 rounded bg-brandCyan/10 border border-brandCyan/30 font-semibold">Holiday Promo Suite</span></h1>
-          <p class="text-xs text-slate-400 hidden sm:block">AI & Coding Class for Kids (Nov & Dec 2026)</p>
-        </div>
-      </div>
+      .glass-card {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-      <!-- View Mode Buttons -->
-      <div class="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-700/80">
-        <button id="viewLandingBtn" onclick="switchView('landing')" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 bg-brandCyan text-brandDark font-semibold shadow-sm flex items-center gap-2">
-          <i class="fa-solid fa-desktop"></i>
-          <span>Landing Page</span>
-        </button>
-        <button id="viewFlyerBtn" onclick="switchView('flyer')" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg text-slate-300 hover:text-white transition-all duration-200 flex items-center gap-2">
-          <i class="fa-solid fa-square-instagram"></i>
-          <span>1:1 Social Flyer</span>
-        </button>
-      </div>
+      .glass-card-hover:hover {
+        border-color: rgba(6, 182, 212, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
+      }
 
-      <!-- Quick Actions -->
-      <div class="flex items-center space-x-2">
-        <button onclick="openModal()" class="bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm shadow-md transition-transform active:scale-95 flex items-center gap-2">
-          <i class="fa-solid fa-calendar-check text-sm"></i>
-          <span>Book Free Trial</span>
-        </button>
-        <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 transition-colors" title="Print / Save PDF">
-          <i class="fa-solid fa-print"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ========================================================================= -->
-  <!-- VIEW 1: FULL INTERACTIVE LANDING PAGE -->
-  <!-- ========================================================================= -->
-  <main id="landingView" class="flex-grow relative">
-    
-    <!-- Background Floating Decorations -->
-    <div class="absolute top-20 left-10 w-72 h-72 bg-brandCyan/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-96 right-10 w-96 h-96 bg-brandViolet/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-brandYellow/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <!-- Code Snippet Decorative Floating Badges -->
-    <div class="hidden lg:block absolute top-36 left-8 bg-slate-900/90 border border-cyan-500/30 rounded-xl p-3 shadow-2xl text-xs font-mono animate-float z-10 text-cyan-300">
-      <div class="flex items-center gap-1.5 mb-1 text-slate-500 text-[10px]">
-        <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-        <span class="ml-2">robot_ai.py</span>
-      </div>
-      <code><span class="text-pink-400">def</span> <span class="text-yellow-300">create_future</span>():<br/>&nbsp;&nbsp;<span class="text-brandCyan">return</span> <span class="text-green-400">"Super Kid 🚀"</span></code>
-    </div>
-
-    <div class="hidden lg:block absolute top-48 right-12 bg-slate-900/90 border border-violet-500/30 rounded-xl p-3 shadow-2xl text-xs font-mono animate-float z-10 text-violet-300" style="animation-delay: 1.5s;">
-      <div class="flex items-center gap-1.5 mb-1 text-slate-500 text-[10px]">
-        <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-        <span class="ml-2">game.js</span>
-      </div>
-      <code><span class="text-violet-400">if</span> (kid.learnsAI) {<br/>&nbsp;&nbsp;kid.confidence += <span class="text-brandYellow">1000</span>;<br/>}</code>
-    </div>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div class="text-center max-w-4xl mx-auto">
-        
-        <!-- Holiday Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brandViolet/20 via-brandCyan/20 to-brandViolet/20 border border-brandCyan/40 mb-6 backdrop-blur-md animate-pulse-glow">
-          <span class="flex h-2.5 w-2.5 relative">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandCyan opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brandCyan"></span>
-          </span>
-          <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-brandCyan">
-            🇰🇪 Kenya Grade School Holiday Program (Nov & Dec 2026)
-          </span>
+      .glow-cyan {
+        box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
+      }
+      .glow-yellow {
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-brandDark text-slate-100 font-sans antialiased selection:bg-brandCyan selection:text-brandDark min-h-screen flex flex-col justify-between overflow-x-hidden"
+  >
+    <!-- CLEAN TOP NAVIGATION BAR -->
+    <header
+      class="sticky top-0 z-40 bg-brandNavy/95 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brandCyan to-brandViolet flex items-center justify-center font-display font-bold text-white shadow-lg"
+          >
+            <i class="fa-solid fa-code text-lg"></i>
+          </div>
+          <div>
+            <h1
+              class="font-display font-bold text-base md:text-lg text-white leading-tight"
+            >
+              FalconKonnects
+              <span
+                class="text-brandCyan text-xs uppercase px-2 py-0.5 rounded bg-brandCyan/10 border border-brandCyan/30 font-semibold"
+                >Academy</span
+              >
+            </h1>
+            <p class="text-xs text-slate-400 hidden sm:block">
+              AI & Coding Class for Kids (Nov & Dec Holiday Program)
+            </p>
+          </div>
         </div>
 
-        <!-- Main Heading -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight text-white mb-6 leading-tight">
-          Turn Screen Time Into <br class="hidden sm:inline"/>
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-brandCyan via-cyan-300 to-brandViolet">Superpowers This Holiday!</span>
-        </h1>
+        <!-- Quick Action CTA -->
+        <div class="flex items-center space-x-2">
+          <button
+            onclick="openModal()"
+            class="bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm shadow-md transition-transform active:scale-95 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-calendar-check text-sm"></i>
+            <span>Book Free Trial</span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-        <!-- Subtitle -->
-        <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-          Empower your child with hands-on <strong class="text-brandYellow font-semibold">AI, Game Coding, and Robotics logic</strong>. Fun, inspiring, and future-proof skills tailored for Kenyan grade school students.
-        </p>
+    <!-- ========================================================================= -->
+    <!-- FULL WEBSITE LANDING PAGE CONTENT -->
+    <!-- ========================================================================= -->
+    <main class="flex-grow relative">
+      <!-- Background Floating Decorations -->
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-brandCyan/15 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-96 right-10 w-96 h-96 bg-brandViolet/15 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-20 left-1/3 w-80 h-80 bg-brandYellow/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
 
-        <!-- CTA Buttons Group -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-bold text-lg shadow-xl glow-yellow transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
-            <i class="fa-solid fa-rocket text-xl"></i>
+      <!-- Code Snippet Decorative Floating Badges -->
+      <div
+        class="hidden lg:block absolute top-36 left-8 bg-slate-900/90 border border-cyan-500/30 rounded-xl p-3 shadow-2xl text-xs font-mono animate-float z-10 text-cyan-300"
+      >
+        <div class="flex items-center gap-1.5 mb-1 text-slate-500 text-[10px]">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+          <span class="ml-2">robot_ai.py</span>
+        </div>
+        <code
+          ><span class="text-pink-400">def</span>
+          <span class="text-yellow-300">create_future</span
+          >():<br />&nbsp;&nbsp;<span class="text-brandCyan">return</span>
+          <span class="text-green-400">"Super Kid 🚀"</span></code
+        >
+      </div>
+
+      <div
+        class="hidden lg:block absolute top-48 right-12 bg-slate-900/90 border border-violet-500/30 rounded-xl p-3 shadow-2xl text-xs font-mono animate-float z-10 text-violet-300"
+        style="animation-delay: 1.5s"
+      >
+        <div class="flex items-center gap-1.5 mb-1 text-slate-500 text-[10px]">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+          <span class="ml-2">game.js</span>
+        </div>
+        <code
+          ><span class="text-violet-400">if</span> (kid.learnsAI) {<br />&nbsp;&nbsp;kid.confidence
+          += <span class="text-brandYellow">1000</span>;<br />}</code
+        >
+      </div>
+
+      <!-- HERO SECTION -->
+      <section
+        class="relative pt-8 pb-16 md:pt-16 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div class="text-center max-w-4xl mx-auto">
+          <!-- Holiday Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brandViolet/20 via-brandCyan/20 to-brandViolet/20 border border-brandCyan/40 mb-6 backdrop-blur-md animate-pulse-glow"
+          >
+            <span class="flex h-2.5 w-2.5 relative">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandCyan opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brandCyan"
+              ></span>
+            </span>
+            <span
+              class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-brandCyan"
+            >
+              🇰🇪 Kenya Grade School Holiday Program (Nov & Dec 2026)
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1
+            class="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight text-white mb-6 leading-tight"
+          >
+            Turn Screen Time Into <br class="hidden sm:inline" />
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-brandCyan via-cyan-300 to-brandViolet"
+              >Superpowers This Holiday!</span
+            >
+          </h1>
+
+          <!-- Subtitle -->
+          <p
+            class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light leading-relaxed"
+          >
+            Empower your child with hands-on
+            <strong class="text-brandYellow font-semibold"
+              >AI, Game Coding, and Robotics logic</strong
+            >. Fun, inspiring, and future-proof skills tailored for Kenyan grade
+            school students.
+          </p>
+
+          <!-- CTA Buttons Group -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          >
+            <button
+              onclick="openModal()"
+              class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-bold text-lg shadow-xl glow-yellow transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+            >
+              <i class="fa-solid fa-rocket text-xl"></i>
+              <span>Book a FREE Trial Class</span>
+            </button>
+
+            <a
+              href="#details"
+              class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-display font-semibold text-lg border border-slate-700 transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              <span>Explore Program</span>
+              <i class="fa-solid fa-arrow-down text-sm text-brandCyan"></i>
+            </a>
+          </div>
+
+          <!-- Highlights Bar -->
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-800/80"
+          >
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div
+                class="text-brandCyan font-bold text-lg sm:text-xl font-display"
+              >
+                Ages 7 - 17
+              </div>
+              <div class="text-xs text-slate-400">Tailored Age Streams</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div
+                class="text-brandGreen font-bold text-lg sm:text-xl font-display"
+              >
+                Nov & Dec
+              </div>
+              <div class="text-xs text-slate-400">Flexible 2-Month Program</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div
+                class="text-brandYellow font-bold text-lg sm:text-xl font-display"
+              >
+                Online & Physical
+              </div>
+              <div class="text-xs text-slate-400">
+                Live Interactive Mentorship
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div
+                class="text-brandViolet font-bold text-lg sm:text-xl font-display"
+              >
+                100% Practical
+              </div>
+              <div class="text-xs text-slate-400">Build Real Projects</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CORE BENEFITS GRID SECTION -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl sm:text-4xl font-display font-bold text-white mb-3"
+          >
+            Why Parents Choose This Program
+          </h2>
+          <p class="text-slate-400 text-base max-w-xl mx-auto">
+            We don't just teach code—we build confidence, critical thinking, and
+            tomorrow's innovators.
+          </p>
+        </div>
+
+        <!-- Core 3 Benefits Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <!-- Benefit 1 -->
+          <div
+            class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-brandCyan/20 border border-brandCyan/40 text-brandCyan flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🧩
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-3">
+              Improves Problem Solving
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Kids learn how to break complex real-world challenges into
+              smaller, solvable steps through fun algorithmic puzzles and game
+              building.
+            </p>
+            <div
+              class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandCyan flex items-center gap-2"
+            >
+              <span>Algorithmic Thinking</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div
+            class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-brandViolet/20 border border-brandViolet/40 text-brandViolet flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🧠
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-3">
+              Better Logical Thinking
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Coding sharpens structural reasoning, math concepts, and pattern
+              recognition, directly boosting school performance across all
+              subjects.
+            </p>
+            <div
+              class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandViolet flex items-center gap-2"
+            >
+              <span>Cognitive Sharpness</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div
+            class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-brandYellow/20 border border-brandYellow/40 text-brandYellow flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🚀
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-3">
+              Brighter Future
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Early exposure to AI tools, Python, and web tech prepares your
+              child for the fast-evolving digital economy and high-impact
+              careers.
+            </p>
+            <div
+              class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandYellow flex items-center gap-2"
+            >
+              <span>Future-Proof Skillset</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extra Benefits Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-brandGreen/20 text-brandGreen flex items-center justify-center text-xl shrink-0"
+            >
+              🤖
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-white text-sm">
+                Hands-On AI Projects
+              </h4>
+              <p class="text-xs text-slate-400">
+                Kids build their first AI chatbot & smart artwork.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-brandCyan/20 text-brandCyan flex items-center justify-center text-xl shrink-0"
+            >
+              🎮
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-white text-sm">
+                Interactive Game Design
+              </h4>
+              <p class="text-xs text-slate-400">
+                Creating playable 2D games they can share with friends.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4 sm:col-span-2 lg:col-span-1"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0"
+            >
+              🎨
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-white text-sm">
+                Productive Screen Time
+              </h4>
+              <p class="text-xs text-slate-400">
+                Shift from passive media consumer to active digital creator.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAM DETAILS & CURRICULUM SECTION -->
+      <section
+        id="details"
+        class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 relative overflow-hidden"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <span
+                class="text-brandCyan text-xs font-bold uppercase tracking-wider px-3 py-1 bg-brandCyan/10 border border-brandCyan/30 rounded-full"
+                >Structured Holiday Curriculum</span
+              >
+              <h2
+                class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-3 mb-4"
+              >
+                Designed For Ages 7 to 17
+              </h2>
+              <p
+                class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6"
+              >
+                Classes are grouped strictly by age and skill level to ensure
+                maximum engagement, peer collaboration, and personalized mentor
+                support.
+              </p>
+
+              <!-- Track Breakdown Cards -->
+              <div class="space-y-4 mb-6">
+                <!-- Junior Stream -->
+                <div
+                  class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                >
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="w-12 h-12 rounded-xl bg-cyan-500/20 text-brandCyan font-bold text-lg flex items-center justify-center"
+                      >7-11</span
+                    >
+                    <div>
+                      <h3 class="font-display font-bold text-white text-base">
+                        Junior Coders Track
+                      </h3>
+                      <p class="text-xs text-slate-400">
+                        Scratch 3.0, Visual Block Coding, Logic Puzzles & Intro
+                        to AI Fun
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="text-xs px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800 shrink-0 font-medium"
+                    >Beginner Friendly</span
+                  >
+                </div>
+
+                <!-- Senior Stream -->
+                <div
+                  class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                >
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="w-12 h-12 rounded-xl bg-violet-500/20 text-brandViolet font-bold text-lg flex items-center justify-center"
+                      >12-17</span
+                    >
+                    <div>
+                      <h3 class="font-display font-bold text-white text-base">
+                        Tech Innovators Track
+                      </h3>
+                      <p class="text-xs text-slate-400">
+                        Python Basics, Web Design (HTML/CSS), AI Prompting & App
+                        Logic
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="text-xs px-3 py-1 rounded-full bg-violet-950 text-violet-300 border border-violet-800 shrink-0 font-medium"
+                    >Intermediate & Advanced</span
+                  >
+                </div>
+              </div>
+
+              <!-- Key Class Facts -->
+              <div
+                class="flex flex-wrap gap-4 text-xs font-medium text-slate-300"
+              >
+                <span class="flex items-center gap-1.5"
+                  ><i class="fa-solid fa-clock text-brandYellow"></i> Flexible
+                  Morning & Afternoon Slots</span
+                >
+                <span class="flex items-center gap-1.5"
+                  ><i class="fa-solid fa-laptop text-brandCyan"></i> PC/Laptop
+                  Required</span
+                >
+                <span class="flex items-center gap-1.5"
+                  ><i class="fa-solid fa-award text-brandGreen"></i> Certificate
+                  of Completion</span
+                >
+              </div>
+            </div>
+
+            <!-- Interactive Mentorship Callout Card -->
+            <div
+              class="lg:col-span-5 bg-gradient-to-br from-slate-900 via-brandNavy to-slate-900 p-6 rounded-2xl border border-slate-700/80 text-center relative"
+            >
+              <div
+                class="w-20 h-20 mx-auto rounded-full bg-slate-800 border-2 border-brandCyan flex items-center justify-center text-4xl mb-4 shadow-xl"
+              >
+                👨‍💻
+              </div>
+              <h3 class="font-display font-bold text-xl text-white">
+                Led by Marcus
+              </h3>
+              <p class="text-xs text-brandCyan font-mono mb-3">
+                Software Engineer & Tech Mentor
+              </p>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                "My goal is to spark curiosity, build confidence, and teach
+                practical digital skills that prepare young minds to lead in an
+                AI-driven world."
+              </p>
+              <div
+                class="bg-slate-950/60 rounded-xl p-3 text-xs text-slate-400 mb-6 border border-slate-800/80"
+              >
+                <span class="text-brandYellow font-semibold block mb-1"
+                  >📅 Holiday Schedule:</span
+                >
+                Batch 1: November 2026 | Batch 2: December 2026
+              </div>
+              <button
+                onclick="openModal()"
+                class="w-full py-3 bg-brandCyan hover:bg-cyan-400 text-slate-950 font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md"
+              >
+                Reserve Your Child's Seat Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSPIRATIONAL CALL TO ACTION BAR -->
+      <section class="py-12 px-4 max-w-5xl mx-auto text-center">
+        <div
+          class="bg-gradient-to-r from-brandViolet/30 via-brandCyan/30 to-brandYellow/20 p-8 sm:p-12 rounded-3xl border border-brandCyan/40 shadow-2xl relative overflow-hidden"
+        >
+          <h2
+            class="text-3xl sm:text-5xl font-display font-black text-white mb-4"
+          >
+            Give Your Child The Head Start They Deserve
+          </h2>
+          <p
+            class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light"
+          >
+            Seats are kept small to guarantee high-quality 1-on-1 guidance.
+            Claim your child’s spot for a FREE introductory session today!
+          </p>
+          <button
+            onclick="openModal()"
+            class="px-10 py-4 bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-extrabold text-xl rounded-2xl shadow-2xl glow-yellow transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-3"
+          >
+            <i class="fa-solid fa-sparkles"></i>
             <span>Book a FREE Trial Class</span>
           </button>
-          
-          <a href="#details" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-display font-semibold text-lg border border-slate-700 transition-all duration-200 flex items-center justify-center gap-2">
-            <span>Explore Program</span>
-            <i class="fa-solid fa-arrow-down text-sm text-brandCyan"></i>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER / CONTACT CARD SECTION -->
+    <footer
+      class="bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+      >
+        <!-- Instructor Bio -->
+        <div class="md:col-span-5">
+          <div class="flex items-center space-x-3 mb-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-brandCyan text-brandDark flex items-center justify-center font-bold text-xl"
+            >
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-white text-lg">
+                Marcus | Lead Instructor
+              </h3>
+              <p class="text-xs text-brandCyan">FalconKonnects Tech Academy</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Dedicated software engineer empowering Kenyan children with
+            cutting-edge digital literacy, critical thinking, and early AI
+            mastery.
+          </p>
+        </div>
+
+        <!-- Contact Details Links -->
+        <div
+          class="md:col-span-7 flex flex-wrap items-center justify-start md:justify-end gap-4"
+        >
+          <!-- WhatsApp Callout -->
+          <a
+            href="https://wa.me/254113951376?text=Hello%20Marcus,%20I%20would%20like%20to%20register%20my%20child%20for%20the%20FREE%20Trial%20Coding%20Class!"
+            target="_blank"
+            class="bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-600/50 p-3.5 rounded-2xl flex items-center space-x-3 transition-colors"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-brandGreen text-slate-950 flex items-center justify-center text-xl"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="text-left">
+              <div class="text-[10px] uppercase text-emerald-400 font-bold">
+                WhatsApp / Direct Call
+              </div>
+              <div class="text-sm font-bold text-white">0113951376</div>
+            </div>
+          </a>
+
+          <!-- Email Callout -->
+          <a
+            href="mailto:marcus@falconkonnects.com?subject=Inquiry%20About%20Holiday%20AI%20and%20Coding%20Class"
+            class="bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-600/50 p-3.5 rounded-2xl flex items-center space-x-3 transition-colors"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-brandCyan text-slate-950 flex items-center justify-center text-xl"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="text-left">
+              <div class="text-[10px] uppercase text-cyan-400 font-bold">
+                Email Us
+              </div>
+              <div class="text-sm font-bold text-white">
+                marcus@falconkonnects.com
+              </div>
+            </div>
           </a>
         </div>
+      </div>
 
-        <!-- Highlights Bar -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
-          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div class="text-brandCyan font-bold text-lg sm:text-xl font-display">Ages 7 - 17</div>
-            <div class="text-xs text-slate-400">Tailored Age Streams</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div class="text-brandGreen font-bold text-lg sm:text-xl font-display">Nov & Dec</div>
-            <div class="text-xs text-slate-400">Flexible 2-Month Program</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div class="text-brandYellow font-bold text-lg sm:text-xl font-display">Online & Physical</div>
-            <div class="text-xs text-slate-400">Live Interactive Mentorship</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div class="text-brandViolet font-bold text-lg sm:text-xl font-display">100% Practical</div>
-            <div class="text-xs text-slate-400">Build Real Projects</div>
-          </div>
+      <!-- Copyright -->
+      <div
+        class="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2"
+      >
+        <div>
+          © 2026 FalconKonnects. All rights reserved. Kenya Grade School Holiday
+          Program.
         </div>
-
+        <div class="flex items-center gap-3">
+          <button
+            onclick="copyShareText()"
+            class="hover:text-brandCyan transition-colors"
+          >
+            <i class="fa-solid fa-copy mr-1"></i> Copy Promo Text
+          </button>
+        </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- CORE BENEFITS GRID SECTION -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-3">Why Parents Choose This Program</h2>
-        <p class="text-slate-400 text-base max-w-xl mx-auto">We don't just teach code—we build confidence, critical thinking, and tomorrow's innovators.</p>
-      </div>
+    <!-- ========================================================================= -->
+    <!-- MODAL: BOOK A FREE TRIAL CLASS FORM -->
+    <!-- ========================================================================= -->
+    <div
+      id="trialModal"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div
+        class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300"
+        id="modalBox"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 w-9 h-9 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded-full flex items-center justify-center transition-colors"
+        >
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
 
-      <!-- Core 3 Benefits Highlights -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <!-- Benefit 1 -->
-        <div class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden">
-          <div class="w-16 h-16 rounded-2xl bg-brandCyan/20 border border-brandCyan/40 text-brandCyan flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-            🧩
+        <!-- Modal Header -->
+        <div class="text-center mb-6">
+          <div
+            class="w-12 h-12 bg-brandYellow/20 border border-brandYellow/40 rounded-2xl text-brandYellow flex items-center justify-center text-2xl mx-auto mb-3"
+          >
+            🎓
           </div>
-          <h3 class="text-2xl font-display font-bold text-white mb-3">Improves Problem Solving</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Kids learn how to break complex real-world challenges into smaller, solvable steps through fun algorithmic puzzles and game building.
+          <h3 class="font-display font-bold text-2xl text-white">
+            Book a FREE Trial Class
+          </h3>
+          <p class="text-xs text-slate-400 mt-1">
+            Reserve a spot for your child (Nov & Dec Holiday Program)
           </p>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandCyan flex items-center gap-2">
-            <span>Algorithmic Thinking</span>
-            <i class="fa-solid fa-chevron-right text-[10px]"></i>
-          </div>
         </div>
 
-        <!-- Benefit 2 -->
-        <div class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden">
-          <div class="w-16 h-16 rounded-2xl bg-brandViolet/20 border border-brandViolet/40 text-brandViolet flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-            🧠
+        <!-- Registration Form -->
+        <form
+          id="bookingForm"
+          onsubmit="handleFormSubmit(event)"
+          class="space-y-4"
+        >
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1"
+              >Parent's Full Name *</label
+            >
+            <input
+              type="text"
+              required
+              placeholder="e.g., Sarah Kamau"
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"
+            />
           </div>
-          <h3 class="text-2xl font-display font-bold text-white mb-3">Better Logical Thinking</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Coding sharpens structural reasoning, math concepts, and pattern recognition, directly boosting school performance across all subjects.
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1"
+                >Child's Age *</label
+              >
+              <select
+                required
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"
+              >
+                <option value="">Select Age</option>
+                <option value="7-9">7 - 9 Years (Junior Scratch)</option>
+                <option value="10-12">10 - 12 Years (Game Dev & AI)</option>
+                <option value="13-17">13 - 17 Years (Python & Web)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1"
+                >Preferred Mode *</label
+              >
+              <select
+                required
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"
+              >
+                <option value="Online">Online (Zoom/Google Meet)</option>
+                <option value="In-Person">In-Person Class</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1"
+              >Phone / WhatsApp Number *</label
+            >
+            <input
+              type="tel"
+              required
+              placeholder="e.g., 0712345678"
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1"
+              >Preferred Holiday Month</label
+            >
+            <div class="flex gap-4 text-xs text-slate-300 mt-1">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" checked class="accent-brandCyan" /> Nov
+                2026
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" checked class="accent-brandCyan" /> Dec
+                2026
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-bold text-base rounded-xl shadow-xl transition-all active:scale-95 mt-2"
+          >
+            Confirm Free Slot <i class="fa-solid fa-paper-plane ml-1"></i>
+          </button>
+        </form>
+
+        <!-- Confirmation Toast inside Modal -->
+        <div id="successMsg" class="hidden text-center py-6">
+          <div
+            class="w-16 h-16 bg-brandGreen/20 text-brandGreen rounded-full flex items-center justify-center text-3xl mx-auto mb-3"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h4 class="font-display font-bold text-xl text-white mb-2">
+            Registration Received!
+          </h4>
+          <p class="text-xs text-slate-300 mb-6">
+            Thank you! Marcus will contact you via WhatsApp / Call to confirm
+            your free trial schedule.
           </p>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandViolet flex items-center gap-2">
-            <span>Cognitive Sharpness</span>
-            <i class="fa-solid fa-chevron-right text-[10px]"></i>
-          </div>
-        </div>
-
-        <!-- Benefit 3 -->
-        <div class="glass-card glass-card-hover p-8 rounded-3xl transition-all duration-300 relative group overflow-hidden">
-          <div class="w-16 h-16 rounded-2xl bg-brandYellow/20 border border-brandYellow/40 text-brandYellow flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-            🚀
-          </div>
-          <h3 class="text-2xl font-display font-bold text-white mb-3">Brighter Future</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Early exposure to AI tools, Python, and web tech prepares your child for the fast-evolving digital economy and high-impact careers.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs font-semibold text-brandYellow flex items-center gap-2">
-            <span>Future-Proof Skillset</span>
-            <i class="fa-solid fa-chevron-right text-[10px]"></i>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Extra Benefits Row -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4">
-          <div class="w-10 h-10 rounded-xl bg-brandGreen/20 text-brandGreen flex items-center justify-center text-xl shrink-0">🤖</div>
-          <div>
-            <h4 class="font-display font-semibold text-white text-sm">Hands-On AI Projects</h4>
-            <p class="text-xs text-slate-400">Kids build their first AI chatbot & smart artwork.</p>
-          </div>
-        </div>
-        <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4">
-          <div class="w-10 h-10 rounded-xl bg-brandCyan/20 text-brandCyan flex items-center justify-center text-xl shrink-0">🎮</div>
-          <div>
-            <h4 class="font-display font-semibold text-white text-sm">Interactive Game Design</h4>
-            <p class="text-xs text-slate-400">Creating playable 2D games they can share with friends.</p>
-          </div>
-        </div>
-        <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex items-center gap-4 sm:col-span-2 lg:col-span-1">
-          <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0">🎨</div>
-          <div>
-            <h4 class="font-display font-semibold text-white text-sm">Productive Screen Time</h4>
-            <p class="text-xs text-slate-400">Shift from passive media consumer to active digital creator.</p>
-          </div>
+          <button
+            onclick="closeModal()"
+            class="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold"
+          >
+            Close Window
+          </button>
         </div>
       </div>
-    </section>
-
-    <!-- PROGRAM DETAILS & CURRICULUM SECTION -->
-    <section id="details" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-7">
-            <span class="text-brandCyan text-xs font-bold uppercase tracking-wider px-3 py-1 bg-brandCyan/10 border border-brandCyan/30 rounded-full">Structured Holiday Curriculum</span>
-            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-3 mb-4">
-              Designed For Ages 7 to 17
-            </h2>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Classes are grouped strictly by age and skill level to ensure maximum engagement, peer collaboration, and personalized mentor support.
-            </p>
-
-            <!-- Track Breakdown Cards -->
-            <div class="space-y-4 mb-6">
-              <!-- Junior Stream -->
-              <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <span class="w-12 h-12 rounded-xl bg-cyan-500/20 text-brandCyan font-bold text-lg flex items-center justify-center">7-11</span>
-                  <div>
-                    <h3 class="font-display font-bold text-white text-base">Junior Coders Track</h3>
-                    <p class="text-xs text-slate-400">Scratch 3.0, Visual Block Coding, Logic Puzzles & Intro to AI Fun</p>
-                  </div>
-                </div>
-                <span class="text-xs px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800 shrink-0 font-medium">Beginner Friendly</span>
-              </div>
-
-              <!-- Senior Stream -->
-              <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <span class="w-12 h-12 rounded-xl bg-violet-500/20 text-brandViolet font-bold text-lg flex items-center justify-center">12-17</span>
-                  <div>
-                    <h3 class="font-display font-bold text-white text-base">Tech Innovators Track</h3>
-                    <p class="text-xs text-slate-400">Python Basics, Web Design (HTML/CSS), AI Prompting & App Logic</p>
-                  </div>
-                </div>
-                <span class="text-xs px-3 py-1 rounded-full bg-violet-950 text-violet-300 border border-violet-800 shrink-0 font-medium">Intermediate & Advanced</span>
-              </div>
-            </div>
-
-            <!-- Key Class Facts -->
-            <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-300">
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-brandYellow"></i> Flexible Morning & Afternoon Slots</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-laptop text-brandCyan"></i> PC/Laptop Required</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-brandGreen"></i> Certificate of Completion</span>
-            </div>
-          </div>
-
-          <!-- Interactive Mentorship Callout Card -->
-          <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 via-brandNavy to-slate-900 p-6 rounded-2xl border border-slate-700/80 text-center relative">
-            <div class="w-20 h-20 mx-auto rounded-full bg-slate-800 border-2 border-brandCyan flex items-center justify-center text-4xl mb-4 shadow-xl">
-              👨‍💻
-            </div>
-            <h3 class="font-display font-bold text-xl text-white">Led by Marcus</h3>
-            <p class="text-xs text-brandCyan font-mono mb-3">Software Engineer & Tech Mentor</p>
-            <p class="text-xs text-slate-300 leading-relaxed mb-6">
-              "My goal is to spark curiosity, build confidence, and teach practical digital skills that prepare young minds to lead in an AI-driven world."
-            </p>
-            <div class="bg-slate-950/60 rounded-xl p-3 text-xs text-slate-400 mb-6 border border-slate-800/80">
-              <span class="text-brandYellow font-semibold block mb-1">📅 Holiday Schedule:</span>
-              Batch 1: November 2026 | Batch 2: December 2026
-            </div>
-            <button onclick="openModal()" class="w-full py-3 bg-brandCyan hover:bg-cyan-400 text-slate-950 font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md">
-              Reserve Your Child's Seat Now
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- INSPIRATIONAL CALL TO ACTION BAR -->
-    <section class="py-12 px-4 max-w-5xl mx-auto text-center">
-      <div class="bg-gradient-to-r from-brandViolet/30 via-brandCyan/30 to-brandYellow/20 p-8 sm:p-12 rounded-3xl border border-brandCyan/40 shadow-2xl relative overflow-hidden">
-        <h2 class="text-3xl sm:text-5xl font-display font-black text-white mb-4">Give Your Child The Head Start They Deserve</h2>
-        <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light">
-          Seats are kept small to guarantee high-quality 1-on-1 guidance. Claim your child’s spot for a FREE introductory session today!
-        </p>
-        <button onclick="openModal()" class="px-10 py-4 bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-extrabold text-xl rounded-2xl shadow-2xl glow-yellow transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-3">
-          <i class="fa-solid fa-sparkles"></i>
-          <span>Book a FREE Trial Class</span>
-        </button>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ========================================================================= -->
-  <!-- VIEW 2: 1:1 SQUARE FLYER (IDEAL FOR INSTAGRAM / WHATSAPP STATUS) -->
-  <!-- ========================================================================= -->
-  <main id="flyerView" class="hidden flex-grow py-8 px-4 flex items-center justify-center">
-    <div class="print-area w-full max-w-[620px] aspect-square bg-gradient-to-br from-brandNavy via-slate-950 to-brandNavy rounded-3xl border-2 border-brandCyan/50 p-6 sm:p-8 relative flex flex-col justify-between shadow-2xl overflow-hidden glow-cyan">
-      
-      <!-- Ambient Glows inside flyer -->
-      <div class="absolute -top-10 -left-10 w-40 h-40 bg-brandCyan/30 rounded-full blur-2xl"></div>
-      <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brandViolet/30 rounded-full blur-2xl"></div>
-
-      <!-- Header Badge -->
-      <div class="relative z-10 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-brandCyan text-brandDark font-bold flex items-center justify-center text-sm">
-            <i class="fa-solid fa-code"></i>
-          </div>
-          <span class="font-display font-extrabold text-sm tracking-wider text-white uppercase">FalconKonnects</span>
-        </div>
-        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brandYellow/20 text-brandYellow border border-brandYellow/40">
-          🇰🇪 Nov & Dec Holiday Program
-        </span>
-      </div>
-
-      <!-- Main Title -->
-      <div class="relative z-10 my-auto text-center py-3">
-        <h2 class="text-2xl sm:text-4xl font-display font-black text-white leading-tight uppercase tracking-tight mb-2">
-          AI & Coding Class <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandCyan via-yellow-300 to-brandViolet">For Kids & Teens</span>
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-300 font-medium max-w-md mx-auto">
-          Transform screen time into future tech superpowers!
-        </p>
-
-        <!-- 3 Core Benefits Pillars -->
-        <div class="grid grid-cols-3 gap-2 my-5 text-left">
-          <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
-            <div class="text-lg mb-1">🧩</div>
-            <div class="font-display font-bold text-white text-xs leading-tight">Problem Solving</div>
-          </div>
-          <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
-            <div class="text-lg mb-1">🧠</div>
-            <div class="font-display font-bold text-white text-xs leading-tight">Logical Thinking</div>
-          </div>
-          <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
-            <div class="text-lg mb-1">🚀</div>
-            <div class="font-display font-bold text-white text-xs leading-tight">Brighter Future</div>
-          </div>
-        </div>
-
-        <!-- Key Info Pills -->
-        <div class="flex justify-center items-center gap-2 text-[11px] sm:text-xs font-semibold">
-          <span class="px-2.5 py-1 bg-cyan-950 text-cyan-300 rounded-md border border-cyan-800">Ages: 7 – 17</span>
-          <span class="px-2.5 py-1 bg-violet-950 text-violet-300 rounded-md border border-violet-800">Online & Physical</span>
-          <span class="px-2.5 py-1 bg-amber-950 text-amber-300 rounded-md border border-amber-800">Nov & Dec</span>
-        </div>
-      </div>
-
-      <!-- Call to Action Footer -->
-      <div class="relative z-10 border-t border-slate-800 pt-3 flex items-center justify-between gap-2">
-        <div>
-          <div class="text-[10px] text-slate-400 uppercase font-semibold">Contact Marcus</div>
-          <div class="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5">
-            <i class="fa-brands fa-whatsapp text-brandGreen"></i> 0113951376
-          </div>
-          <div class="text-[10px] text-brandCyan">marcus@falconkonnects.com</div>
-        </div>
-
-        <button onclick="openModal()" class="px-4 py-2.5 bg-gradient-to-r from-brandYellow to-amber-500 text-slate-950 font-display font-extrabold text-xs sm:text-sm rounded-xl shadow-lg glow-yellow">
-          Book FREE Trial
-        </button>
-      </div>
-
-    </div>
-  </main>
-
-
-  <!-- FOOTER / CONTACT CARD SECTION -->
-  <footer class="no-print bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-      
-      <!-- Instructor Bio -->
-      <div class="md:col-span-5">
-        <div class="flex items-center space-x-3 mb-3">
-          <div class="w-10 h-10 rounded-xl bg-brandCyan text-brandDark flex items-center justify-center font-bold text-xl">
-            <i class="fa-solid fa-laptop-code"></i>
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-white text-lg">Marcus | Lead Instructor</h3>
-            <p class="text-xs text-brandCyan">FalconKonnects Tech Academy</p>
-          </div>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed">
-          Dedicated software engineer empowering Kenyan children with cutting-edge digital literacy, critical thinking, and early AI mastery.
-        </p>
-      </div>
-
-      <!-- Contact Details Links -->
-      <div class="md:col-span-7 flex flex-wrap items-center justify-start md:justify-end gap-4">
-        
-        <!-- WhatsApp Callout -->
-        <a href="https://wa.me/254113951376?text=Hello%20Marcus,%20I%20would%20like%20to%20register%20my%20child%20for%20the%20FREE%20Trial%20Coding%20Class!" target="_blank" class="bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-600/50 p-3.5 rounded-2xl flex items-center space-x-3 transition-colors">
-          <div class="w-10 h-10 rounded-xl bg-brandGreen text-slate-950 flex items-center justify-center text-xl">
-            <i class="fa-brands fa-whatsapp"></i>
-          </div>
-          <div class="text-left">
-            <div class="text-[10px] uppercase text-emerald-400 font-bold">WhatsApp / Direct Call</div>
-            <div class="text-sm font-bold text-white">0113951376</div>
-          </div>
-        </a>
-
-        <!-- Email Callout -->
-        <a href="mailto:marcus@falconkonnects.com?subject=Inquiry%20About%20Holiday%20AI%20and%20Coding%20Class" class="bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-600/50 p-3.5 rounded-2xl flex items-center space-x-3 transition-colors">
-          <div class="w-10 h-10 rounded-xl bg-brandCyan text-slate-950 flex items-center justify-center text-xl">
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <div class="text-left">
-            <div class="text-[10px] uppercase text-cyan-400 font-bold">Email Us</div>
-            <div class="text-sm font-bold text-white">marcus@falconkonnects.com</div>
-          </div>
-        </a>
-
-      </div>
-
     </div>
 
-    <!-- Copyright -->
-    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
-      <div>© 2026 FalconKonnects. All rights reserved. Kenya Grade School Holiday Program.</div>
-      <div class="flex items-center gap-3">
-        <button onclick="copyShareText()" class="hover:text-brandCyan transition-colors">
-          <i class="fa-solid fa-copy mr-1"></i> Copy Promo Text
-        </button>
-      </div>
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 z-50 bg-brandCyan text-slate-950 font-semibold px-4 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none flex items-center gap-2 text-xs"
+    >
+      <i class="fa-solid fa-circle-info"></i>
+      <span id="toastText">Action completed!</span>
     </div>
-  </footer>
 
-  <!-- ========================================================================= -->
-  <!-- MODAL: BOOK A FREE TRIAL CLASS FORM -->
-  <!-- ========================================================================= -->
-  <div id="trialModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300" id="modalBox">
-      
-      <!-- Close Button -->
-      <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded-full flex items-center justify-center transition-colors">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC -->
+    <!-- ========================================================================= -->
+    <script>
+      const modal = document.getElementById("trialModal");
+      const modalBox = document.getElementById("modalBox");
 
-      <!-- Modal Header -->
-      <div class="text-center mb-6">
-        <div class="w-12 h-12 bg-brandYellow/20 border border-brandYellow/40 rounded-2xl text-brandYellow flex items-center justify-center text-2xl mx-auto mb-3">
-          🎓
-        </div>
-        <h3 class="font-display font-bold text-2xl text-white">Book a FREE Trial Class</h3>
-        <p class="text-xs text-slate-400 mt-1">Reserve a spot for your child (Nov & Dec Holiday Program)</p>
-      </div>
-
-      <!-- Registration Form -->
-      <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Parent's Full Name *</label>
-          <input type="text" required placeholder="e.g., Sarah Kamau" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"/>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Child's Age *</label>
-            <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan">
-              <option value="">Select Age</option>
-              <option value="7-9">7 - 9 Years (Junior Scratch)</option>
-              <option value="10-12">10 - 12 Years (Game Dev & AI)</option>
-              <option value="13-17">13 - 17 Years (Python & Web)</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Mode *</label>
-            <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan">
-              <option value="Online">Online (Zoom/Google Meet)</option>
-              <option value="In-Person">In-Person Class</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Phone / WhatsApp Number *</label>
-          <input type="tel" required placeholder="e.g., 0712345678" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brandCyan"/>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Holiday Month</label>
-          <div class="flex gap-4 text-xs text-slate-300 mt-1">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" checked class="accent-brandCyan"/> Nov 2026
-            </label>
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" checked class="accent-brandCyan"/> Dec 2026
-            </label>
-          </div>
-        </div>
-
-        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brandYellow to-amber-500 hover:from-amber-400 hover:to-brandYellow text-slate-950 font-display font-bold text-base rounded-xl shadow-xl transition-all active:scale-95 mt-2">
-          Confirm Free Slot <i class="fa-solid fa-paper-plane ml-1"></i>
-        </button>
-      </form>
-
-      <!-- Confirmation Toast inside Modal -->
-      <div id="successMsg" class="hidden text-center py-6">
-        <div class="w-16 h-16 bg-brandGreen/20 text-brandGreen rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
-          <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <h4 class="font-display font-bold text-xl text-white mb-2">Registration Received!</h4>
-        <p class="text-xs text-slate-300 mb-6">
-          Thank you! Marcus will contact you via WhatsApp / Call at <span id="userPhone" class="text-brandCyan font-semibold"></span> to confirm your free trial schedule.
-        </p>
-        <button onclick="closeModal()" class="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold">
-          Close Window
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- TOAST NOTIFICATION CONTAINER -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brandCyan text-slate-950 font-semibold px-4 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none flex items-center gap-2 text-xs">
-    <i class="fa-solid fa-circle-info"></i>
-    <span id="toastText">Action completed!</span>
-  </div>
-
-  <!-- ========================================================================= -->
-  <!-- JAVASCRIPT LOGIC -->
-  <!-- ========================================================================= -->
-  <script>
-    // View Switcher Function (Landing Page vs Social Flyer)
-    function switchView(viewName) {
-      const landingView = document.getElementById('landingView');
-      const flyerView = document.getElementById('flyerView');
-      const landingBtn = document.getElementById('viewLandingBtn');
-      const flyerBtn = document.getElementById('viewFlyerBtn');
-
-      if (viewName === 'landing') {
-        landingView.classList.remove('hidden');
-        flyerView.classList.add('hidden');
-        landingBtn.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 bg-brandCyan text-brandDark font-semibold shadow-sm flex items-center gap-2';
-        flyerBtn.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg text-slate-300 hover:text-white transition-all duration-200 flex items-center gap-2';
-      } else {
-        landingView.classList.add('hidden');
-        flyerView.classList.remove('hidden');
-        flyerBtn.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 bg-brandCyan text-brandDark font-semibold shadow-sm flex items-center gap-2';
-        landingBtn.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg text-slate-300 hover:text-white transition-all duration-200 flex items-center gap-2';
+      function openModal() {
+        modal.classList.remove("pointer-events-none", "opacity-0");
+        modal.classList.add("opacity-100");
+        modalBox.classList.remove("scale-95");
+        modalBox.classList.add("scale-100");
       }
-    }
 
-    // Modal Controls
-    const modal = document.getElementById('trialModal');
-    const modalBox = document.getElementById('modalBox');
+      function closeModal() {
+        modal.classList.add("pointer-events-none", "opacity-0");
+        modal.classList.remove("opacity-100");
+        modalBox.classList.add("scale-95");
+        modalBox.classList.remove("scale-100");
 
-    function openModal() {
-      modal.classList.remove('pointer-events-none', 'opacity-0');
-      modal.classList.add('opacity-100');
-      modalBox.classList.remove('scale-95');
-      modalBox.classList.add('scale-100');
-    }
+        setTimeout(() => {
+          document.getElementById("bookingForm").classList.remove("hidden");
+          document.getElementById("successMsg").classList.add("hidden");
+        }, 300);
+      }
 
-    function closeModal() {
-      modal.classList.add('pointer-events-none', 'opacity-0');
-      modal.classList.remove('opacity-100');
-      modalBox.classList.add('scale-95');
-      modalBox.classList.remove('scale-100');
-      
-      // Reset form after exit
-      setTimeout(() => {
-        document.getElementById('bookingForm').classList.remove('hidden');
-        document.getElementById('successMsg').classList.add('hidden');
-      }, 300);
-    }
+      function handleFormSubmit(e) {
+        e.preventDefault();
 
-    // Form Submit Handler
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      document.getElementById('bookingForm').classList.add('hidden');
-      document.getElementById('successMsg').classList.remove('hidden');
-    }
+        const parentName = e.target.elements[0].value;
+        const childAge = e.target.elements[1].value;
+        const mode = e.target.elements[2].value;
+        const phone = e.target.elements[3].value;
 
-    // Copy Promo Text Snippet for WhatsApp/Social Media Sharing
-    function copyShareText() {
-      const shareText = `🚀 *AI & Coding Class for Kids (Ages 7-17)* 🚀\n🇰🇪 *Kenya Grade School Holiday Program (Nov & Dec)*\n\nGive your child future-proof skills this holiday!\n\n✨ *Core Benefits:*\n🧩 Improves Problem Solving\n🧠 Better Logical Thinking\n🚀 Brighter Future\n\n📲 *Book a FREE Trial Class Today!*\nWhatsApp/Call: 0113951376\nEmail: marcus@falconkonnects.com`;
+        // Format the WhatsApp message string
+        const message = `Hello Marcus! I want to book a FREE Trial Class for my child.%0A%0A*Parent:* ${parentName}%0A*Child Age:* ${childAge} Years%0A*Format:* ${mode}%0A*Phone:* ${phone}`;
 
-      const tempTextArea = document.createElement("textarea");
-      tempTextArea.value = shareText;
-      document.body.appendChild(tempTextArea);
-      tempTextArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempTextArea);
+        // Redirect user straight to WhatsApp Web / App
+        window.open(`https://wa.me/254113951376?text=${message}`, "_blank");
 
-      showToast("Promo text copied to clipboard!");
-    }
+        // Show success state on page
+        document.getElementById("bookingForm").classList.add("hidden");
+        document.getElementById("successMsg").classList.remove("hidden");
+      }
 
-    // Toast Message
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastText = document.getElementById('toastText');
-      toastText.textContent = message;
-      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-      toast.classList.add('opacity-100', 'translate-y-0');
+      function copyShareText() {
+        const shareText = `🚀 *AI & Coding Class for Kids (Ages 7-17)* 🚀\n🇰🇪 *Kenya Grade School Holiday Program (Nov & Dec)*\n\nGive your child future-proof skills this holiday!\n\n✨ *Core Benefits:*\n🧩 Improves Problem Solving\n🧠 Better Logical Thinking\n🚀 Brighter Future\n\n📲 *Book a FREE Trial Class Today!*\nWhatsApp/Call: 0113951376\nEmail: marcus@falconkonnects.com`;
 
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-        toast.classList.remove('opacity-100', 'translate-y-0');
-      }, 3000);
-    }
-  </script>
+        const tempTextArea = document.createElement("textarea");
+        tempTextArea.value = shareText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
 
-</body>
+        showToast("Promo text copied to clipboard!");
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        const toastText = document.getElementById("toastText");
+        toastText.textContent = message;
+        toast.classList.remove(
+          "opacity-0",
+          "translate-y-4",
+          "pointer-events-none",
+        );
+        toast.classList.add("opacity-100", "translate-y-0");
+
+        setTimeout(() => {
+          toast.classList.add(
+            "opacity-0",
+            "translate-y-4",
+            "pointer-events-none",
+          );
+          toast.classList.remove("opacity-100", "translate-y-0");
+        }, 3000);
+      }
+    </script>
+  </body>
 </html>
